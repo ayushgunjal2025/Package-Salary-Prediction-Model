@@ -1,8 +1,10 @@
 from flask import Flask, request, jsonify
 import joblib
+from flask_cors import CORS
 import os
 
 app = Flask(__name__)
+CORS(app)
 
 # Load both models
 simple_model = joblib.load("model_simple.joblib")
